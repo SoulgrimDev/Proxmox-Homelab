@@ -2,7 +2,7 @@
 
 ## Hardware
 
-Current snapshot: [2026-11-22-hardware.md](./2026-11-22-hardware.md)
+Current snapshot: [2026-10-16-hardware.md](./2026-10-16-hardware.md)
 
 # Hardware Inventory
 
@@ -35,13 +35,9 @@ _Last updated: 2026-10-16_
 |---|---|---|
 | 2026-05-10 | Upgraded homelab build using old PC parts, Old CPU was i5-6700k. | [Changes: Debian cannot resolve domain names after setting a static IP](../changes/2026-05-10-homlab-upgrade-v1.md) |
 
-### Older versions
-
-- [2026-10-16-hardware.md](./2026-10-16-hardware.md)
-
 ## Services
 
-Current snapshot: [2026-11-22-services.md](./2026-11-22-services.md)
+Current snapshot: [2026-10-16-services.md](./2026-10-16-services.md)
 
 # Services Inventory
 
@@ -68,13 +64,9 @@ _Last updated: 2026-10-16_
 | VMs | Backup NVME SSD | Once Monthly | PVE-Storage |
 | Hypervisor | RAID Boot Drive | NA | Homelab Boot |
 
-### Older versions
-
-- [2026-10-16-services.md](./2026-10-16-services.md)
-
 ## Network
 
-Current snapshot: [2026-11-22-network.md](./2026-11-22-network.md)
+Current snapshot: [2026-10-17-network.md](./2026-10-17-network.md)
 
 # Network Overview
 
@@ -95,8 +87,4 @@ _Last updated: 2026-10-17_
 - No Firewall
 - No VLANs or Subnets
 
-
-### Older versions
-
-- [2026-10-17-network.md](./2026-10-17-network.md)
 
