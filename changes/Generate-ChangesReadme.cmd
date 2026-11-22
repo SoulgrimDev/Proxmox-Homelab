@@ -30,27 +30,21 @@ $rows = @(foreach ($file in Get-ChildItem -LiteralPath $Folder -File -Filter '*.
         Write-Warning "Skipping $($file.Name): invalid date"
         continue
     }
-    $fence = ''
-    foreach ($line in [IO.File]::ReadLines($file.FullName, [Text.Encoding]::UTF8)) {
-        if ($line -match '^ {0,3}(`{3,}|~{3,})(.*)$') {
-            $run = $Matches[1]
-            $tail = $Matches[2]
-            if (!$fence) { $fence = $run }
-            elseif ($run.StartsWith($fence) -and !$tail.Trim()) { $fence = '' }
-            continue
-        }
-        if (!$fence -and $line -match '^ {0,3}#[ \t]+(\S.*?)\s*$') {
-            $title = $Matches[1] -replace '\s+#+$', ''
-            break
-        }
+    [pscustomobject]@{
+        Date = $day
+        Name = $file.Name
+        Heading = "## $stamp - $title"
+        Body = [IO.File]::ReadAllText($file.FullName, [Text.Encoding]::UTF8)
     }
-    $label = $title -replace '([\\\[\]`*_<>])', '\$1'
-    $url = [Uri]::EscapeDataString($file.Name).Replace('(', '%28').Replace(')', '%29')
-    [pscustomobject]@{ Date = $day; Name = $file.Name; Row = "- **$stamp** - [$label](./$url)" }
 })
 $lines = @('# Change history', '')
 if ($rows.Count) {
-    $lines += $rows | Sort-Object @{Expression='Date'; Descending=$true}, Name | ForEach-Object { $_.Row }
+    $lines += $rows | Sort-Object @{Expression='Date'; Descending=$true}, Name | ForEach-Object {
+        $_.Heading
+        ''
+        $_.Body
+        ''
+    }
 } else {
     $lines += 'No dated change notes yet.'
 }
