@@ -31,7 +31,7 @@ PROXMOX-HOMELAB/
 | [Incidents](incidents/) | Troubleshooting reports covering symptoms, timeline, diagnosis, root cause, resolution, and prevention. |
 | [Changes](changes/) | Planned work with backup, rollback, and validation steps. |
 | [Knowledge base](knowledge-base/) | Reusable how-tos and fixes distilled from incidents. |
-| [Inventory](inventory/) | Current [hardware](inventory/hardware.md), [services](inventory/services.md), and [network](inventory/network.md) references, with links to earlier snapshots in the inventory README. |
+| [Inventory](inventory/) | Current hardware, services, and network references, with links to earlier snapshots in the inventory README. |
 | [Templates](templates/) | Starting points for incidents, changes, knowledge base articles, and network documentation. |
 
 ## README Generators
